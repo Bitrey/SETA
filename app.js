@@ -4,7 +4,6 @@ const fs = require("fs");
 const fetch = require('node-fetch');
 const { URLSearchParams } = require('url');
 const cheerio = require('cheerio');
-// const cheerioTableparser = require('cheerio-tableparser');
 const HtmlTableToJson = require('html-table-to-json');
 
 const SETAURL = "https://www.setaweb.it/mo/quantomanca";
