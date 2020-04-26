@@ -12,8 +12,8 @@
     "cheerio": "^1.0.0-rc.3",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "html-table-to-json": "^1.0.0",
     "node-fetch": "^2.6.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "tabletojson": "^2.0.4"
   }
 }
