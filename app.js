@@ -6,6 +6,7 @@ const { URLSearchParams } = require('url');
 const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
 const fermateJSON = require("./fermate.json");
+require('dotenv').config()
 
 const SETAURL = "https://www.setaweb.it/mo/quantomanca";
 
@@ -55,6 +56,6 @@ app.get("/", function(req, res){
 //     });
 // });
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server partito!");
 });
