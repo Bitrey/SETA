@@ -16,7 +16,7 @@ const getData = (res, nomeFermata, codiceFermata) => {
     params.append('risultato', 'palina');
     params.append('nome_fermata', (nomeFermata ? nomeFermata : 'San Cesario'));
     params.append('qm_palina', (codiceFermata ? codiceFermata : 'MO2076'));
- 
+
     fetch(SETAURL, {
             method: 'post',
             body:    params,
@@ -24,17 +24,17 @@ const getData = (res, nomeFermata, codiceFermata) => {
         })
         .then(res => res.text())
         .then(body  => {
-            fs.writeFile('data.html', body, function (err) {
-                if (err) throw err;
-                console.log('Saved!');
-            });
+            // fs.writeFile('data.html', body, function (err) {
+            //     if (err) throw err;
+            //     console.log('Saved!');
+            // });
             const $ = cheerio.load(body);
             const converted = tabletojson.convert($(".qm_table_risultati").parent().html());
-            fs.writeFile('table.json', JSON.stringify(converted), function (err) {
-                if (err) throw err;
-                res.send(body);
-                console.log('Table saved!');
-            });
+            // fs.writeFile('table.json', JSON.stringify(converted[0]), function (err) {
+            //     if (err) throw err;
+            //     console.log('Table saved!');
+            // });
+            res.json(converted[0]);
         });
 }
 
@@ -47,15 +47,14 @@ app.get("/", function(req, res){
     };
 });
 
-app.post("/salvafermate", function(req, res){
-    fs.writeFile('fermate.json', req.body.fermate, function (err) {
-        if (err) throw err;
-        // res.send(body);
-        res.json(converted);
-        console.log('Fermate salvate!');
-    });
-});
+// app.post("/salvafermate", function(req, res){
+//     fs.writeFile('fermate.json', req.body.fermate, function (err) {
+//         if (err) throw err;
+//         res.json(converted);
+//         console.log('Fermate salvate!');
+//     });
+// });
 
 app.listen(3000, function(){
     console.log("Server partito!");
-})
+});
