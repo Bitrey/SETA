@@ -1,5 +1,12 @@
 ### SETA Quanto Manca API
 
+# Attenzione: obsoleto
+
+Questa API è stata superata dalla seconda versione che puoi trovare a questo link: https://github.com/Bitrey/SETA-API-V2
+La prima versione non verrà più mantenuta, pertanto dovresti passare a quella nuova.
+
+---
+
 ### Cos'è
 
 **API non ufficiale** del servizio "Quanto Manca" del servizio di trasporto di Modena, Piacenza e Reggio Emilia, SETA.
